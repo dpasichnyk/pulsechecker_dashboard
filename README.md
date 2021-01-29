@@ -1,24 +1,25 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Pulse checker Dashboard
 
-Things you may want to cover:
+ - Ruby version: `3.0.0`
+ - Rails version: `6.1.1`
+ - DB: `Postgres`
 
-* Ruby version
 
-* System dependencies
+## Start
 
-* Configuration
+ 1. Create `.env` file: `cp .env.example .env`
+ 2. Run containers: `docker-compose up -d`
+ 3. Database setup: `rails db:setup`
+ 4. Run server: `rails s`
+ 5. Run Frontend `bin/webpack-dev-server --hot`
 
-* Database creation
+## Testing
+ 1. Run `rubocop` for check code styling.
+ 2. Run `brakeman` for check security vulnerabilities
+ 3. Run `rspec spec` for run tests.
 
-* Database initialization
+## Debug Rails
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+ - Put `byebug` somewhere in .rb
