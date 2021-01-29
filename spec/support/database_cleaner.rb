@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 DatabaseCleaner.allow_remote_database_url = true
 
 RSpec.configure do |config|

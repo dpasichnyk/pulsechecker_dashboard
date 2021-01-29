@@ -106,3 +106,5 @@ Style/EndlessMethod:
   Enabled: true
 Style/IfWithBooleanLiteralBranches:
   Enabled: true
+Style/FrozenStringLiteralComment:
+  Enabled: false
