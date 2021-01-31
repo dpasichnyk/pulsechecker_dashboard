@@ -5,7 +5,7 @@
  - Ruby version: `3.0.0`
  - Rails version: `6.1.1`
  - DB: `Postgres`
- - node: `14.15.4`
+ - Node: `14.15.4`
 
 
 ## Start
