@@ -1,0 +1,15 @@
+<header class="header" id="header">
+  <div class="container">
+    <div class="form-row">
+      <div class="col-6 text-left">
+      </div>
+      <div class="col-6 text-right">
+        <% if user_signed_in? %>
+          <p class="link"><%= link_to('Logout', destroy_user_session_path, method: :delete) %></p>
+        <% else %>
+          <p class="link"><%= link_to('Login', new_user_session_path) %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</header>
