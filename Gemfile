@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.0'
 
+gem 'devise'
 gem 'jbuilder', '~> 2.7'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 5.0'
@@ -31,6 +32,7 @@ end
 group :development do
   gem 'annotate'
   gem 'listen', '~> 3.3'
+  gem 'mailcatcher'
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'rubocop', require: false
   gem 'spring'
