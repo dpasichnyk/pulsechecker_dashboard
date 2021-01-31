@@ -1,0 +1,91 @@
+AllCops:
+  SuggestExtensions: false
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+  TargetRubyVersion: 3.0.0
+  Exclude:
+    - bin/*
+    - doc/**/*
+    - db/schema.rb
+    - log/**/*
+    - public/**/*
+    - storage/**/*
+    - tmp/**/*
+    - vendor/**/*
+    - node_modules/**/*
+    - config/puma.rb
+    - config.ru
+    - Rakefile
+    - config/spring.rb
+
+Layout/TrailingWhitespace:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 100
+  Exclude:
+    - db/**/*
+Metrics/ClassLength:
+  Max: 150
+  Exclude:
+    - db/**/*
+Metrics/MethodLength:
+  Max: 30
+  Exclude:
+    - db/**/*
+Metrics/BlockLength:
+  Enabled: true
+  Exclude:
+    - config/**/*
+    - spec/**/*
+    - db/**/*
+    - lib/tasks/auto_annotate_models.rake
+Metrics/AbcSize:
+  Max: 30
+  Exclude:
+    - db/**/*
+
+Naming/PredicateName:
+  Enabled: false
+Style/ClassAndModuleChildren:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+Style/EmptyMethod:
+  EnforcedStyle: expanded
+Lint/DuplicateBranch: # (new in 1.3)
+  Enabled: true
+Lint/DuplicateRegexpCharacterClassElement: # (new in 1.1)
+  Enabled: true
+Lint/EmptyBlock: # (new in 1.1)
+  Enabled: true
+Lint/EmptyClass: # (new in 1.3)
+  Enabled: true
+Lint/NoReturnInBeginEndBlocks: # (new in 1.2)
+  Enabled: true
+Lint/ToEnumArguments: # (new in 1.1)
+  Enabled: true
+Lint/UnmodifiedReduceAccumulator: # (new in 1.1)
+  Enabled: true
+Style/ArgumentsForwarding: # (new in 1.1)
+  Enabled: true
+Style/CollectionCompact: # (new in 1.2)
+  Enabled: true
+Style/DocumentDynamicEvalDefinition: # (new in 1.1)
+  Enabled: true
+Style/NegatedIfElseCondition: # (new in 1.2)
+  Enabled: true
+Style/NilLambda: # (new in 1.3)
+  Enabled: true
+Style/RedundantArgument: # (new in 1.4)
+  Enabled: true
+Style/SwapValues: # (new in 1.1)
+  Enabled: true
+Layout/SpaceBeforeBrackets: # (new in 1.7)
+  Enabled: true
+Lint/AmbiguousAssignment: # (new in 1.7)
+  Enabled: true
+Lint/UnexpectedBlockArity: # (new in 1.5)
+  Enabled: true
+Style/HashExcept: # (new in 1.7)
+  Enabled: true
