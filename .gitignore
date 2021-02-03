@@ -34,6 +34,7 @@ config/master.key
 
 .idea
 .env
+.env.docker
 
 /public/packs
 /public/packs-test
