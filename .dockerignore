@@ -1,0 +1,11 @@
+.git
+log
+tmp/pids/*
+Dockerfile
+docker-compose.yml
+spec_integration
+doc
+spec/cassettes
+.bundle
+.vendor
+*~
