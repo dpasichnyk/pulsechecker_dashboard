@@ -1,11 +1,11 @@
 .button.is-primary {
-  background-color: $main-color;
+  background-color: $button-color;
   border-color: transparent;
   color: $color-white;
 }
 
 .button.is-primary:hover, .button.is-primary.is-hovered {
-  background-color: $main-color-hover;
+  background-color: $button-color-hover;
   border-color: transparent;
   color: $color-white;
 }
