@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PulseChecker Dashboard</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_pack_tag 'landing_page', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'landing_page', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+<div class="container <%= controller_name %>">
+  <div id='main'>
+    <%= yield %>
+  </div>
+</div>
+</body>
+</html>

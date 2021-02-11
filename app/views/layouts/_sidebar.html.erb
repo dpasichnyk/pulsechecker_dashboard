@@ -1,4 +1,12 @@
 <aside id="main-sidebar" class="aside">
+  <div class="has-text-centered">
+    <%= link_to new_pulsechecker_path, class: 'button is-primary' do %>
+          <span class="icon is-small">
+            <i class="fas fa-plus"></i>
+          </span>
+      <span class="menu-text">Add PulseChecker</span>
+    <% end %>
+  </div>
   <nav class="menu">
     <p class="menu-label">General</p>
     <ul class="menu-list">
@@ -11,9 +19,13 @@
     <p class="menu-label">Administration</p>
     <ul class="menu-list">
       <li>
-        <a class="menu-item" href="#">
-          <span class="icon is-small"><i class="fas fa-edit"></i></span> <span class="menu-text">Forms</span>
-        </a>
+        <%= link_to pulsecheckers_path, class: 'menu-item' do %>
+          <span class="icon is-small">
+            <i class="fas fa-wave-square"></i>
+
+          </span>
+          <span class="menu-text">PulseCheckers</span>
+        <% end %>
       </li>
       <li>
         <a class="menu-item" href="#">

@@ -1,0 +1,79 @@
+<h3 class="title">Create a PulseChecker</h3>
+
+<div class="columns is-multiline">
+  <div class="column is-9">
+
+    <%= form_for @pulsechecker do |form| %>
+
+      <div class="field is-horizontal">
+        <div class="field-label is-normal">
+          <label class="label">Friendly name</label>
+        </div>
+        <div class="field-body">
+          <div class="field">
+            <div class="control">
+              <%= form.text_field :name, placeholder: 'Friendly name', class: 'input' %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="field is-horizontal">
+        <div class="field-label is-normal">
+          <label class="label">Url or ip address</label>
+        </div>
+        <div class="field-body">
+          <div class="field">
+            <div class="control">
+              <%= form.text_field :url, placeholder: 'Url or ip address', class: 'input' %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="field is-horizontal">
+        <div class="field-label is-normal">
+          <label class="label">Type</label>
+        </div>
+        <div class="field-body">
+          <div class="field is-narrow">
+            <div class="control">
+              <div class="select is-fullwidth">
+
+                <%= form.select :kind, Pulsechecker.kinds.keys.to_a %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="field is-horizontal">
+        <div class="field-label is-normal">
+          <label class="label">Interval</label>
+        </div>
+        <div class="field-body">
+          <div class="field">
+            <div class="control">
+              <%= form.hidden_field :interval, id: 'interval-field' %>
+              <span id="slider-label" class="label"></span>
+              <div id="slider"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="field is-horizontal">
+        <div class="field-label">
+          <!-- Left empty for spacing -->
+        </div>
+        <div class="field-body">
+          <div class="field">
+            <div class="control">
+              <%= form.submit 'Create PulseChecker', class: 'button is-primary' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
