@@ -1,6 +1,5 @@
 import noUiSlider from 'nouislider';
 import wNumb from 'wnumb';
-import 'nouislider/distribute/nouislider.css';
 
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOMContentLoaded')
