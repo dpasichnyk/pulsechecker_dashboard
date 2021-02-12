@@ -5,13 +5,11 @@
 
 // --- start JS ---
 import Rails from "@rails/ujs"
-import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import '@fortawesome/fontawesome-free/js/all.js';
 
 Rails.start()
-Turbolinks.start()
 ActiveStorage.start()
 // --- end JS ---
 

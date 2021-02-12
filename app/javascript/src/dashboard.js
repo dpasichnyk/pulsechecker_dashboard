@@ -10,11 +10,10 @@ document.addEventListener('DOMContentLoaded', function () {
     let menuItems = document.getElementsByClassName('menu-item');
 
     for (let i = 0; i < menuItems.length; i++) {
-        menuItems[i].addEventListener('click', (e) => activeMenuItem(e, menuItems[i]));
+        menuItems[i].addEventListener('click', () => activeMenuItem(menuItems[i]));
     }
 
-    let activeMenuItem = (event, item) => {
-        event.preventDefault()
+    let activeMenuItem = (item) => {
         let activeMenuItems = document.getElementsByClassName('menu-item is-active');
         for (let i = 0; i < activeMenuItems.length; i++) {
             activeMenuItems[i].classList.remove('is-active');
