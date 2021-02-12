@@ -34,7 +34,7 @@ ADD Gemfile.lock $APP_DIR/
 ADD .gemrc $APP_DIR/
 RUN bundle install --jobs 4 --retry 3
 ADD . $APP_DIR
-RUN rm -rf node_modules vendor
+RUN rm -rf node_modules
 RUN yarn
 RUN mkdir log
 
