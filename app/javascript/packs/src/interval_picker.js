@@ -18,9 +18,13 @@ document.addEventListener('DOMContentLoaded', () => {
         50400000, 54000000, 57600000, 61200000, 64800000, 68400000, 72000000,
         75600000, 79200000, 82800000, 86400000]
 
+    function checkInterval(value) {
+        return value >= intervalField.value;
+    }
 
     noUiSlider.create(slider, {
-        start: 0,
+
+        start: range.findIndex(checkInterval),
         step: 1,
         // tooltips: [wNumb({
         //     decimals: 0,

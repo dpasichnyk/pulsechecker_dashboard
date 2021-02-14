@@ -2,16 +2,19 @@
   <thead>
   <tr>
     <th class="">
-      <abbr title="Kind">Kind</abbr>
+      <p title="Kind">Kind</p>
     </th>
     <th class="">
-      <abbr title="Name">Name</abbr>
+      <p title="Name">Name</p>
     </th>
     <th>
-      <abbr title="URL">URL</abbr>
+      <p title="URL">URL</p>
     </th>
     <th>
-      <abbr title="Interval">Interval</abbr>
+      <p title="Interval">Interval</p>
+    </th>
+    <th>
+      <p title="Created At">Created At</p>
     </th>
     <th>Actions</th>
   </tr>
@@ -19,17 +22,24 @@
   <tbody>
   <% @pulsecheckers.each do |pulsechecker| %>
     <tr>
-      <td><%= pulsechecker.kind %></td>
+      <td><%= pulsechecker.kind.humanize %></td>
       <td><%= pulsechecker.name %></td>
       <td><%= pulsechecker.url %></td>
       <td><%= milliseconds_to_human_readable(pulsechecker.interval) %></td>
+      <td><%= datetime_to_string(pulsechecker.created_at) %></td>
       <td>
-        <a class="button is-primary">
-          <span class="icon is-small"> <i class="fa fa-edit"></i> </span><span>Edit</span></a
-        >
-        <a class="button is-danger">
-          <span class="icon is-small"> <i class="fa fa-trash-o"></i> </span><span>Delete</span></a
-        >
+        <div class="buttons are-small">
+          <%= link_to edit_pulsechecker_path(pulsechecker), class: 'button is-primary is-outlined' do %>
+            <span class="icon is-small"> <i class="fas fa-edit"></i> </span><span>Edit</span>
+          <% end %>
+
+          <%= link_to pulsechecker_path(pulsechecker),
+                      method: :delete,
+                      data: { confirm: 'Are you sure?' },
+                      class: 'button is-danger is-outlined' do %>
+            <span class="icon is-small"> <i class="fas fa-trash"></i> </span><span>Delete</span>
+          <% end %>
+        </div>
       </td>
     </tr>
   <% end %>
