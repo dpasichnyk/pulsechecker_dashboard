@@ -16,9 +16,9 @@ class PulsecheckersController < ApplicationController
   end
 
   def create
-    pulsechecker = current_user.pulsecheckers.create!(pulsechecker_params)
-    if pulsechecker.save
-      flash[:success] = 'PulseChecker was successfully created.'
+    @pulsechecker = current_user.pulsecheckers.create(pulsechecker_params)
+    if @pulsechecker.save
+      flash[:success] = t('controllers.plusechecker.create')
       redirect_to pulsecheckers_path
     else
       render :new
@@ -27,7 +27,7 @@ class PulsecheckersController < ApplicationController
 
   def update
     if @pulsechecker.update(pulsechecker_params)
-      flash[:success] = 'PulseChecker was successfully updated.'
+      flash[:success] = t('controllers.plusechecker.update')
       redirect_to pulsecheckers_path
     else
       render :edit
@@ -36,7 +36,7 @@ class PulsecheckersController < ApplicationController
 
   def destroy
     @pulsechecker.destroy
-    flash[:success] = 'PulseChecker was removed.'
+    flash[:success] = t('controllers.plusechecker.destroy')
     redirect_to pulsecheckers_path
   end
 

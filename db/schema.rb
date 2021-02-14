@@ -17,12 +17,13 @@ ActiveRecord::Schema.define(version: 2021_02_09_213725) do
 
   create_table "pulsecheckers", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.integer "kind"
-    t.string "name"
-    t.string "url"
-    t.integer "interval"
+    t.integer "kind", null: false
+    t.string "name", default: "", null: false
+    t.string "url", default: "", null: false
+    t.integer "interval", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["name", "user_id"], name: "index_pulsecheckers_on_name_and_user_id", unique: true
     t.index ["user_id"], name: "index_pulsecheckers_on_user_id"
   end
 

@@ -12,8 +12,11 @@
         <div class="field-body">
           <div class="field">
             <div class="control">
-              <%= form.text_field :name, placeholder: 'Friendly name', class: 'input' %>
+              <%= form.text_field :name, placeholder: 'Friendly name', class: "input #{error_form_class(@pulsechecker, :name)}" %>
             </div>
+            <% if has_error?(@pulsechecker, :name) %>
+              <p class="help is-danger"><%= error_message(@pulsechecker, :name) %></p>
+            <% end %>
           </div>
         </div>
       </div>
@@ -25,8 +28,11 @@
         <div class="field-body">
           <div class="field">
             <div class="control">
-              <%= form.text_field :url, placeholder: 'Url or ip address', class: 'input' %>
+              <%= form.text_field :url, placeholder: 'Url or ip address', class: "input #{error_form_class(@pulsechecker, :url)}" %>
             </div>
+            <% if has_error?(@pulsechecker, :url) %>
+              <p class="help is-danger"><%= error_message(@pulsechecker, :url) %></p>
+            <% end %>
           </div>
         </div>
       </div>
