@@ -39,8 +39,7 @@
           <div class="field is-narrow">
             <div class="control">
               <div class="select is-fullwidth">
-
-                <%= form.select :kind, Pulsechecker.kinds.keys.to_a %>
+                <%= form.select :kind, Pulsechecker.kinds.keys.map { |k| [k.humanize, k] } %>
               </div>
             </div>
           </div>

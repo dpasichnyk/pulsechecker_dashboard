@@ -1,8 +1,7 @@
 import noUiSlider from 'nouislider';
 import wNumb from 'wnumb';
 
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOMContentLoaded')
+document.addEventListener('DOMContentLoaded', () => {
     let slider = document.getElementById('slider');
     let sliderLabel = document.getElementById('slider-label');
     let intervalField = document.getElementById('interval-field');

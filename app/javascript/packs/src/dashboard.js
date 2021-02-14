@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
     // Get all "has-children" elements
     let withChildren = document.querySelectorAll('.menu .has-children')
     let sidebar = document.querySelector('#main-sidebar')
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     })
 
-    sidebarToggler.addEventListener('click', function () {
+    sidebarToggler.addEventListener('click', () => {
         sidebar.classList.toggle('closed')
 
         if (sidebar.classList.contains('closed')) {
@@ -28,5 +28,19 @@ document.addEventListener('DOMContentLoaded', function () {
             mainContent.classList.remove('sidebar--closed')
             footerCopyright.classList.remove('sidebar--closed')
         }
-    })
+    });
+
+    (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
+        const $notification = $delete.parentNode;
+
+        // add addEventListener for close btn
+        $delete.addEventListener('click', () => {
+            $notification.parentNode.removeChild($notification);
+        });
+        // hide notification after 3 seconds
+        setTimeout(() => {
+            $notification.classList.add('hide');
+            $notification.parentNode.removeChild($notification);
+        }, 3000);
+    });
 })
