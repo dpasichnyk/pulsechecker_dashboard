@@ -10,11 +10,9 @@
 
 ## Start
 
- 1. Create `.env` file: `cp .env.example .env`
+ 1. Create `.env` file: `cp .env.example .env` and  `cp .env.docker.example .env.docker`
  2. Run containers: `docker-compose up -d`
- 3. Database setup: `rails db:setup`
- 4. Run server: `rails s`
- 5. Run Frontend `bin/webpack-dev-server --hot`
+ 3. Database setup: `docker-compose run dashboard rails db:setup`
 
 ## Testing
  1. Run `rubocop` for check code styling.

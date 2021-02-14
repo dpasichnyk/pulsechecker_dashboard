@@ -34,4 +34,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :trackable, :timeoutable, :confirmable, :lockable
+
+  # associations
+  has_many :pulsecheckers, dependent: :destroy
+
+  # callbacks
 end

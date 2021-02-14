@@ -1,0 +1,6 @@
+<% flash.each do |type, message| %>
+  <div class="notification <%= bulma_class_for_flash(type) %>">
+    <button class="delete"></button>
+    <%= message %>
+  </div>
+<% end %>

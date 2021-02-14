@@ -11,11 +11,8 @@ import '@fortawesome/fontawesome-free/js/all.js';
 
 Rails.start()
 ActiveStorage.start()
-import './src/index';
 // --- end JS ---
 
-require.context('../images', true)
-
 // --- start stylesheets ---
-import '../stylesheets/application'
+import '../stylesheets/landing_page'
 // --- end stylesheets ---

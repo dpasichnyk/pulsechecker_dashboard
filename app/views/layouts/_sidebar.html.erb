@@ -1,0 +1,52 @@
+<aside id="main-sidebar" class="aside">
+  <div class="has-text-centered">
+    <%= link_to new_pulsechecker_path, class: 'button is-primary' do %>
+          <span class="icon is-small">
+            <i class="fas fa-plus"></i>
+          </span>
+      <span class="menu-text">Add PulseChecker</span>
+    <% end %>
+  </div>
+  <nav class="menu">
+    <p class="menu-label">General</p>
+    <ul class="menu-list">
+      <li>
+        <%= link_to root_path, class: "menu-item #{is_active_sidebar_element?('dashboard', 'index')}" do %>
+          <span class="icon is-small">
+            <i class="fas fa-tachometer-alt"></i>
+          </span>
+          <span class="menu-text">Dashboard</span>
+        <% end %>
+      </li>
+    </ul>
+    <p class="menu-label">Administration</p>
+    <ul class="menu-list">
+      <li>
+        <%= link_to pulsecheckers_path, class: "menu-item #{is_active_sidebar_element?('pulsecheckers', 'index')}" do %>
+          <span class="icon is-small">
+            <i class="fas fa-wave-square"></i>
+          </span>
+          <span class="menu-text">PulseCheckers</span>
+        <% end %>
+      </li>
+    </ul>
+
+    <p class="menu-label">Live On</p>
+    <ul class="menu-list">
+      <li>
+        <a class="menu-item" href="#">
+          <span class="icon is-small"><i class="fas fa-bug"></i></span> <span class="menu-text">Additional Pages</span>
+        </a>
+      </li>
+      <li>
+        <a class="menu-item" href="#">
+          <span class="icon is-small"><i class="fab fa-windows"></i></span> <span class="menu-text">Extras</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <div id="sidebar-toggler">
+    <span class="icon is-small"><i class="fas fa-angle-double-left"></i></span>
+  </div>
+</aside>

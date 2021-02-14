@@ -9,7 +9,6 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 6.1.1'
 gem 'sass-rails', '>= 6'
-gem 'turbolinks', '~> 5'
 gem 'webpacker', '~> 5.0'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
