@@ -1,5 +1,5 @@
 class PulsecheckersController < ApplicationController
-  before_action :current_monitor, only: %i[show edit update destroy]
+  before_action :current_pulsechecker, only: %i[show edit update destroy]
   
   def index
     @pulsecheckers = current_user.pulsecheckers
@@ -42,8 +42,11 @@ class PulsecheckersController < ApplicationController
 
   private
 
-  def current_monitor
-    @pulsechecker = Pulsechecker.find(params[:id])
+  def current_pulsechecker
+    @pulsechecker = current_user.pulsecheckers.find(params[:id])
+  rescue ActiveRecord::RecordNotFound => _e
+    flash[:warning] = t('controllers.plusechecker.not_found')
+    redirect_to pulsecheckers_path
   end
 
   def pulsechecker_params

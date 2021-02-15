@@ -35,3 +35,4 @@ en:
       create: 'PulseChecker was successfully created.'
       update: 'PulseChecker was successfully updated.'
       destroy: 'PulseChecker was removed.'
+      not_found: 'PulseChecker not found.'

@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.0'
 
+gem 'bigdecimal'
 gem 'devise'
 gem 'jbuilder', '~> 2.7'
 gem 'pg', '>= 0.18', '< 2.0'
@@ -10,7 +11,6 @@ gem 'puma', '~> 5.0'
 gem 'rails', '~> 6.1.1'
 gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 5.0'
-gem 'bigdecimal'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
