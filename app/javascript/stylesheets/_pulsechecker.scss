@@ -1,0 +1,21 @@
+.pulsechecker {
+  .form-submit {
+    .control {
+      padding-top: 25px;
+    }
+  }
+
+  .noUi-horizontal .noUi-handle {
+    width: 17px;
+    cursor: pointer;
+  }
+
+  #slider .noUi-connect {
+    background: $dracula-purple;
+  }
+}
+.pulsecheckers {
+  .table-actions {
+    width: 165px;
+  }
+}

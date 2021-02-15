@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Get all "has-children" elements
     let withChildren = document.querySelectorAll('.menu .has-children')
     let sidebar = document.querySelector('#main-sidebar')
+    let addPulsecheckerIcon = document.querySelector('#add-pulsechecker-icon')
     // Toggle sidebar
     let sidebarToggler = document.querySelector('#sidebar-toggler')
     let mainContent = document.querySelector('#main')
@@ -16,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     sidebarToggler.addEventListener('click', () => {
         sidebar.classList.toggle('closed')
+        addPulsecheckerIcon.classList.toggle('open')
 
         if (sidebar.classList.contains('closed')) {
             withChildren.forEach(function (wChildrenEl) {
