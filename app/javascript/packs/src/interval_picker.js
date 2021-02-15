@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         //         return '<div class="more-tooltip-html">' + timeConversion(range[value]) + '</div>';
         //     }
         // })],
+        connect: [true, false],
         format: wNumb({
             decimals: 0
         }),

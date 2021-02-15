@@ -3,6 +3,16 @@
   transition: opacity 1s;
 }
 
+.button-add-plusechecker {
+  padding-bottom: 20px;
+}
+
+.button-add-plusechecker {
+  .open {
+    display: none;
+  }
+}
+
 :root {
   --animate-duration: 1s;
   --animate-delay: 1s;
