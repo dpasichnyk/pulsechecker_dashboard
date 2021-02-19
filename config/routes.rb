@@ -4,6 +4,6 @@ Rails.application.routes.draw do
 
   resources :pulsecheckers
   get 'profile', action: :show, controller: 'profile'
-  put 'profile_update', action: :update, controller: 'profile'
+  put 'update_profile', action: :update, controller: 'profile'
   put 'update_password', action: :update_password, controller: 'profile'
 end

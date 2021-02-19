@@ -14,7 +14,7 @@
       <p title="Interval">Interval</p>
     </th>
     <th>
-      <p title="Created At">Create Date</p>
+      <p title="Created At">Creation date</p>
     </th>
     <th class="table-actions">Actions</th>
   </tr>
@@ -38,9 +38,6 @@
           <%= link_to '#', class: 'button is-danger is-outlined' do %>
             <span class="icon is-small"><i class="fas fa-play"></i></span>
           <% end %>
-          <%#= link_to '#', class: 'button is-success is-outlined' do %>
-<!--            <span class="icon is-small"><i class="fas fa-stop-circle"></i></span>-->
-          <%# end %>
           <%= link_to pulsechecker_path(pulsechecker),
                       method: :delete,
                       data: { confirm: 'Are you sure?' },

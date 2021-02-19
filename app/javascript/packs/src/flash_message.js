@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-    (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
-        const notification = $delete.parentNode;
+    (document.querySelectorAll('.notification .delete') || []).forEach((btn_delete) => {
+        const notification = btn_delete.parentNode;
 
         // add addEventListener for close btn
-        $delete.addEventListener('click', () => {
+        btn_delete.addEventListener('click', () => {
             notification.parentNode.removeChild(notification);
         });
         // hide notification after 3 seconds
