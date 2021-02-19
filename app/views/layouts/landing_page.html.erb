@@ -11,8 +11,9 @@
 </head>
 
 <body>
-<div class="wrapper <%= controller_name %>">
+<div class="container <%= controller_name %>">
   <main id='main' class='main'>
+    <%= render 'layouts/flash' %>
     <%= yield %>
   </main>
 </div>

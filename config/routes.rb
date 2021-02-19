@@ -3,4 +3,7 @@ Rails.application.routes.draw do
   root to: 'dashboard#index'
 
   resources :pulsecheckers
+  get 'profile', action: :show, controller: 'profile'
+  put 'profile_update', action: :update, controller: 'profile'
+  put 'update_password', action: :update_password, controller: 'profile'
 end

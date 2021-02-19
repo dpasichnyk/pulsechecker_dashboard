@@ -14,7 +14,7 @@
       <p title="Interval">Interval</p>
     </th>
     <th>
-      <p title="Created At">Created At</p>
+      <p title="Created At">Create Date</p>
     </th>
     <th class="table-actions">Actions</th>
   </tr>
@@ -29,15 +29,23 @@
       <td><%= datetime_to_string(pulsechecker.created_at) %></td>
       <td>
         <div class="buttons are-small">
-          <%= link_to edit_pulsechecker_path(pulsechecker), class: 'button is-primary is-outlined' do %>
-            <span class="icon is-small"> <i class="fas fa-edit"></i> </span><span>Edit</span>
+          <%= link_to pulsechecker_path(pulsechecker), class: 'button is-info is-outlined', 'data-tooltip': 'Show PulseChecker' do %>
+            <span class="icon is-small"><i class="far fa-eye"></i></span>
           <% end %>
-
+          <%= link_to edit_pulsechecker_path(pulsechecker), class: 'button is-primary is-outlined' do %>
+            <span class="icon is-small"><i class="fas fa-edit"></i></span>
+          <% end %>
+          <%= link_to '#', class: 'button is-danger is-outlined' do %>
+            <span class="icon is-small"><i class="fas fa-play"></i></span>
+          <% end %>
+          <%#= link_to '#', class: 'button is-success is-outlined' do %>
+<!--            <span class="icon is-small"><i class="fas fa-stop-circle"></i></span>-->
+          <%# end %>
           <%= link_to pulsechecker_path(pulsechecker),
                       method: :delete,
                       data: { confirm: 'Are you sure?' },
                       class: 'button is-danger is-outlined' do %>
-            <span class="icon is-small"> <i class="fas fa-trash"></i> </span><span>Delete</span>
+            <span class="icon is-small"><i class="fas fa-trash"></i></span>
           <% end %>
         </div>
       </td>

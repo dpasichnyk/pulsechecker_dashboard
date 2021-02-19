@@ -29,19 +29,22 @@
           <span class="menu-text">PulseCheckers</span>
         <% end %>
       </li>
-    </ul>
-
-    <p class="menu-label">Live On</p>
-    <ul class="menu-list">
       <li>
         <a class="menu-item" href="#">
-          <span class="icon is-small"><i class="fas fa-bug"></i></span> <span class="menu-text">Additional Pages</span>
+          <span class="icon is-small"><i class="fas fa-info-circle"></i></span> <span class="menu-text">Status Pages</span>
         </a>
       </li>
+    </ul>
+
+    <p class="menu-label">Account</p>
+    <ul class="menu-list">
       <li>
-        <a class="menu-item" href="#">
-          <span class="icon is-small"><i class="fab fa-windows"></i></span> <span class="menu-text">Extras</span>
-        </a>
+        <%= link_to profile_path, class: "menu-item #{is_active_sidebar_element?('profile', 'index')}" do %>
+          <span class="icon is-small">
+            <i class="fas fa-user"></i>
+          </span>
+          <span class="menu-text">My settings</span>
+        <% end %>
       </li>
     </ul>
   </nav>

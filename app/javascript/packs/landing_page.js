@@ -11,6 +11,7 @@ import '@fortawesome/fontawesome-free/js/all.js';
 
 Rails.start()
 ActiveStorage.start()
+import './src/flash_message';
 // --- end JS ---
 
 // --- start stylesheets ---

@@ -39,4 +39,8 @@ class User < ApplicationRecord
   has_many :pulsecheckers, dependent: :destroy
 
   # callbacks
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 end
