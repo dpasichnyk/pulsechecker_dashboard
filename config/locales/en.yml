@@ -36,3 +36,6 @@ en:
       update: 'PulseChecker was successfully updated.'
       destroy: 'PulseChecker was removed.'
       not_found: 'PulseChecker not found.'
+    profile:
+      update: 'User info was successfully updated.'
+      update_password: 'User password was successfully updated.'

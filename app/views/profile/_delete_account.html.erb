@@ -1,0 +1,13 @@
+<div class="columns is-multiline">
+  <div class="column is-9">
+    <h2 class="subtitle is-4">Delete my account</h2>
+
+    <p class="subtitle is-3">
+      <%= button_to 'Delete my account',
+                    registration_path(current_user),
+                    data: { confirm: 'Are you sure?' },
+                    method: :delete, class: 'button is-primary is-outlined' %>
+    </p>
+  </div>
+</div>
+

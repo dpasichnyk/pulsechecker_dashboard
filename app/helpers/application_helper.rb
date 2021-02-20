@@ -11,6 +11,8 @@ module ApplicationHelper
       'is-danger'
     when 'warning'
       'is-warning'
+    when 'alert'
+      'is-warning'
     when 'notice'
       'is-info'
     else

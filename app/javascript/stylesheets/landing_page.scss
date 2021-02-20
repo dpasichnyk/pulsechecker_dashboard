@@ -1,1 +1,5 @@
-@import "~bulma-dracula/src/bulma-dracula.scss";
+@import "~bulma-dracula/src/bulma-dracula";
+
+.container {
+  max-width: 600px;
+}

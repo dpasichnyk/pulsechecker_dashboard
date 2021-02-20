@@ -1,8 +1,6 @@
 <div class="columns is-multiline pulsechecker">
-  <div class="column is-9">
-
+  <div class="column is-6">
     <%= form_for @pulsechecker do |form| %>
-
       <div class="field is-horizontal">
         <div class="field-label is-normal">
           <label class="label">Friendly name</label>
@@ -10,10 +8,14 @@
         <div class="field-body">
           <div class="field">
             <div class="control">
-              <%= form.text_field :name, placeholder: 'Friendly name', class: "input #{error_form_class(@pulsechecker, :name)}" %>
+              <%= form.text_field :name,
+                                  placeholder: 'Friendly name',
+                                  class: "input #{error_form_class(@pulsechecker, :name)}" %>
             </div>
             <% if has_error?(@pulsechecker, :name) %>
-              <p class="help is-danger"><%= error_message(@pulsechecker, :name) %></p>
+              <p class="help is-danger">
+                <%= error_message(@pulsechecker, :name) %>
+              </p>
             <% end %>
           </div>
         </div>
@@ -26,10 +28,14 @@
         <div class="field-body">
           <div class="field">
             <div class="control">
-              <%= form.text_field :url, placeholder: 'Url or ip address', class: "input #{error_form_class(@pulsechecker, :url)}" %>
+              <%= form.text_field :url,
+                                  placeholder: 'Url or ip address',
+                                  class: "input #{error_form_class(@pulsechecker, :url)}" %>
             </div>
             <% if has_error?(@pulsechecker, :url) %>
-              <p class="help is-danger"><%= error_message(@pulsechecker, :url) %></p>
+              <p class="help is-danger">
+                <%= error_message(@pulsechecker, :url) %>
+              </p>
             <% end %>
           </div>
         </div>

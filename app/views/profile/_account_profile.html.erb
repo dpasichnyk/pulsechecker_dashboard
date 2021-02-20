@@ -1,0 +1,56 @@
+<div class="columns is-multiline">
+  <div class="column is-9">
+    <h2 class="title">Account profile</h2>
+    <%= form_for(@user, url: update_profile_path, html: { method: :put }) do |form| %>
+
+      <div class="field is-horizontal">
+        <div class="field-label is-normal">
+          <label class="label">First Name</label>
+        </div>
+        <div class="field-body">
+          <div class="field">
+            <div class="control">
+              <%= form.text_field :first_name, placeholder: 'First Name', class: "input #{error_form_class(@user, :first_name)}" %>
+            </div>
+            <% if has_error?(@user, :first_name) %>
+              <p class="help is-danger">
+                <%= error_message(@user, :first_name) %>
+              </p>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+      <div class="field is-horizontal">
+        <div class="field-label is-normal">
+          <label class="label">Last Name</label>
+        </div>
+        <div class="field-body">
+          <div class="field">
+            <div class="control">
+              <%= form.text_field :last_name, placeholder: 'Last Name', class: "input #{error_form_class(@user, :last_name)}" %>
+            </div>
+            <% if has_error?(@user, :last_name) %>
+              <p class="help is-danger">
+                <%= error_message(@user, :last_name) %>
+              </p>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+      <div class="field is-horizontal form-submit">
+        <div class="field-label">
+        </div>
+        <div class="field-body">
+          <div class="field">
+            <div class="control">
+              <%= form.submit 'Update user info', class: 'button is-primary' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
