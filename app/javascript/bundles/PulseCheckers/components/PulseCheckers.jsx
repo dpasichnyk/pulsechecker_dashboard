@@ -1,26 +1,51 @@
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import React, { useState } from 'react';
+import PulseChecker from "./PulseChecker";
 
-const PulseCheckers = (props) => {
-    console.log((props))
-  const [name, setName] = useState(props.name);
+class PulseCheckers extends Component {
+    constructor(props) {
+        super(props);
+        const { pulsecheckers } = this.props;
+        this.state = {
+            authenticityToken: document.querySelector('meta[name=csrf-token]').content,
+            pulsecheckers: pulsecheckers
+        };
+    }
 
-  return (
-    <div>
-      <h3>Hello, {name}!</h3>
-      <hr />
-      <form>
-        <label htmlFor="name">
-          Say hello to:
-          <input id="name" type="text" value={name} onChange={(e) => setName(e.target.value)} />
-        </label>
-      </form>
-    </div>
-  );
-};
+    render() {
+        console.log('state', this.state)
+        const { pulsecheckers } = this.state;
+        return (
+            <div className='pulsecheckers'>
+                <table className="table is-striped is-narrow is-hoverable is-fullwidth">
+                    {/*<thead>*/}
+                    {/*<tr>*/}
+                    {/*    <th><abbr title="Position">Pos</abbr></th>*/}
+                    {/*    <th>Team</th>*/}
+                    {/*    <th><abbr title="Played">Pld</abbr></th>*/}
+                    {/*    <th><abbr title="Won">W</abbr></th>*/}
+                    {/*    <th><abbr title="Drawn">D</abbr></th>*/}
+                    {/*    <th><abbr title="Lost">L</abbr></th>*/}
+                    {/*    <th><abbr title="Goals for">GF</abbr></th>*/}
+                    {/*    <th><abbr title="Goals against">GA</abbr></th>*/}
+                    {/*    <th><abbr title="Goal difference">GD</abbr></th>*/}
+                    {/*    <th><abbr title="Points">Pts</abbr></th>*/}
+                    {/*    <th>Qualification or relegation</th>*/}
+                    {/*</tr>*/}
+                    {/*</thead>*/}
+                    <tbody>
+                    {pulsecheckers.map(pulsechecker => (
+                        <PulseChecker key={pulsechecker.id} pulsechecker={pulsechecker} />
+                    ))}
+                    </tbody>
+                </table>
+            </div>
+        )
+    }
+}
 
 PulseCheckers.propTypes = {
-  name: PropTypes.string.isRequired, // this is passed from the Rails view
+    pulsecheckers: PropTypes.array.isRequired, // this is passed from the Rails view
 };
 
 export default PulseCheckers;
