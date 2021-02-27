@@ -1,8 +1,11 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import PulseChecker from "./PulseChecker";
+import deletePulseChecker from '../actions/deletePulseChecker';
+import changeStatus from '../actions/changeStatus';
 
 class PulseCheckers extends Component {
+
     constructor(props) {
         super(props);
         const { pulsecheckers } = this.props;
@@ -12,30 +15,47 @@ class PulseCheckers extends Component {
         };
     }
 
+    handleRemove = async (id) => {
+        const response = await deletePulseChecker(id, this.state.authenticityToken)
+        if (response.status === 204) {
+            let newArray = this.state.pulsecheckers.filter(function( obj ) {
+                return obj.id !== id;
+            });
+            this.setState({ pulsecheckers: newArray })
+        } else {
+            console.log(response)
+        }
+    }
+
+    handleChangeStatus = async (id) => {
+        const response = await changeStatus(id, this.state.authenticityToken)
+        if (response.status === 204) {
+            const elementsIndex = this.state.pulsecheckers.findIndex(el => el.id === id )
+            let newArray = [...this.state.pulsecheckers]
+            newArray[elementsIndex] = {...newArray[elementsIndex], active: !newArray[elementsIndex].active}
+            this.setState({ pulsecheckers: newArray })
+        } else {
+            console.log(response)
+        }
+    }
+
+    handleChange = (id) => {
+        console.log('handleChange for id:', id)
+    }
+
     render() {
-        console.log('state', this.state)
         const { pulsecheckers } = this.state;
         return (
             <div className='pulsecheckers'>
                 <table className="table is-striped is-narrow is-hoverable is-fullwidth">
-                    {/*<thead>*/}
-                    {/*<tr>*/}
-                    {/*    <th><abbr title="Position">Pos</abbr></th>*/}
-                    {/*    <th>Team</th>*/}
-                    {/*    <th><abbr title="Played">Pld</abbr></th>*/}
-                    {/*    <th><abbr title="Won">W</abbr></th>*/}
-                    {/*    <th><abbr title="Drawn">D</abbr></th>*/}
-                    {/*    <th><abbr title="Lost">L</abbr></th>*/}
-                    {/*    <th><abbr title="Goals for">GF</abbr></th>*/}
-                    {/*    <th><abbr title="Goals against">GA</abbr></th>*/}
-                    {/*    <th><abbr title="Goal difference">GD</abbr></th>*/}
-                    {/*    <th><abbr title="Points">Pts</abbr></th>*/}
-                    {/*    <th>Qualification or relegation</th>*/}
-                    {/*</tr>*/}
-                    {/*</thead>*/}
                     <tbody>
                     {pulsecheckers.map(pulsechecker => (
-                        <PulseChecker key={pulsechecker.id} pulsechecker={pulsechecker} />
+                        <PulseChecker key={pulsechecker.id}
+                                      pulsechecker={pulsechecker}
+                                      handleRemove={this.handleRemove}
+                                      handleChangeStatus={this.handleChangeStatus}
+                                      handleChange={this.handleChange}
+                        />
                     ))}
                     </tbody>
                 </table>
