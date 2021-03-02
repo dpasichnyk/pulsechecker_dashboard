@@ -1,1 +1,6 @@
-<%= react_component('PulseCheckers', props: { pulsecheckers: @pulsecheckers}, prerender: false) %>
+<%= react_component('PulseCheckers', props: {
+  pulsecheckers: @pulsecheckers,
+  intervalValues: Pulsechecker::INTERVAL_VALUES,
+  responseTimeValues: Pulsechecker::RESPONSE_TIME_VALUES,
+  kindValues: Pulsechecker.kinds.keys
+}, prerender: false) %>

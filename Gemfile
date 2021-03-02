@@ -6,13 +6,13 @@ ruby '3.0.0'
 gem 'bigdecimal'
 gem 'devise'
 gem 'jbuilder', '~> 2.7'
+gem 'mini_racer', platforms: :ruby
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 6.1.1'
 gem 'react_on_rails', '12.0.4'
 gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 5.0'
-gem 'mini_racer', platforms: :ruby
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
@@ -50,4 +50,3 @@ group :test do
 end
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
-
