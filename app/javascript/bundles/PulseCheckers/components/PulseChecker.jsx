@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from "prop-types";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import timeConversion from '../../utils/timeConversion'
+import UpTimeChat from './UpTimeChart'
 
 import '../style/pulsechecker.css';
 
@@ -15,6 +16,7 @@ const PulseChecker = (props) => {
         <td>{name}</td>
         <td>{timeConversion(interval)}</td>
         <td>{timeConversion(response_time)}</td>
+        <td><UpTimeChat data={[]}/></td>
         <td>
             <div className="buttons are-small">
                 <button className='button is-primary is-light' onClick={() => handleChangeStatus(id)}>
