@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import PulseChecker from './PulseChecker';
 import PulseCheckerForm from './PulseCheckerForm';
@@ -104,10 +104,10 @@ class PulseCheckers extends Component {
     }
 
     handleUpdatePulseChecker = async (id) => {
-        console.log('handleUpdatePulseChecker', id)
         const { authenticityToken, pulsecheckers } = this.state
         const pulseChecker = pulsecheckers.find(element => element.id === id);
         const response = await updatePulseChecker(authenticityToken, pulseChecker)
+
         if (response.status === 200) {
             const elementsIndex = this.state.pulsecheckers.findIndex(el => el.id === id )
             let newArray = [...this.state.pulsecheckers]
@@ -120,7 +120,8 @@ class PulseCheckers extends Component {
 
     renderEditForm(pulsechecker) {
         const { intervalValues, responseTimeValues, kindValues } = this.props;
-        return(
+
+        return (
             <PulseCheckerForm
                 key={pulsechecker.id}
                 showCancelButton={true}
@@ -150,7 +151,6 @@ class PulseCheckers extends Component {
     render() {
         const { pulsecheckers, newPulseChecker } = this.state;
         const { intervalValues, responseTimeValues, kindValues } = this.props;
-        console.log(this.state)
         return (
             <div className='pulsecheckers'>
                 <table className="table is-striped is-narrow is-hoverable is-fullwidth">

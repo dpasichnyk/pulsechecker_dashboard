@@ -24,11 +24,7 @@ class ApplicationController < ActionController::Base
   def render_not_valid(error)
     errors = {}
     error.keys.map { |key| errors[key] = error.full_messages_for(key)[0] }
-    render_error error: error.full_messages[0],
-                 data: {
-                   errors: errors
-                 },
-                 status: 422
+    render_error error: error.full_messages[0], data: { errors: errors }, status: 422
   end
 
   def render_error(error: t('errors.something_went_wrong'), data: nil, status: 400)
