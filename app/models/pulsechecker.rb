@@ -8,6 +8,7 @@
 #  kind          :integer          not null
 #  name          :string           default(""), not null
 #  response_time :integer          default(500), not null
+#  slug          :string           not null
 #  url           :string           default(""), not null
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
@@ -33,10 +34,23 @@ class Pulsechecker < ApplicationRecord
 
   RESPONSE_TIME_VALUES = [125, 250, 500, 1000, 2000].freeze
 
+  # callbacks
+  before_create :generate_slug
+
   # associations
   belongs_to :user, inverse_of: :pulsecheckers
 
   # validations
   validates :name, :kind, :interval, :url, presence: true
   validates :name, uniqueness: { scope: :user_id }
+
+  private
+
+  # Generate it until slug is unique.
+  def generate_slug
+    self.slug = loop do
+      slug = SecureRandom.urlsafe_base64(4)
+      break slug unless Pulsechecker.exists?(slug: slug)
+    end
+  end
 end

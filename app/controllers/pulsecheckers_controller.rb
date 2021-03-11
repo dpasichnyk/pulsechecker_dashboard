@@ -5,6 +5,9 @@ class PulsecheckersController < ApplicationController
     @pulsecheckers = current_user.pulsecheckers
   end
 
+  def show
+  end
+
   def create
     @pulsechecker = current_user.pulsecheckers.new(pulsechecker_params)
 
@@ -23,12 +26,12 @@ class PulsecheckersController < ApplicationController
     end
   end
 
-  def change_status
-    @pulsechecker.update!(active: !@pulsechecker.active)
-  end
-
   def destroy
     @pulsechecker.destroy
+  end
+
+  def change_status
+    @pulsechecker.update!(active: !@pulsechecker.active)
   end
 
   private
