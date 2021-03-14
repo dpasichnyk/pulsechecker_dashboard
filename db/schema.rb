@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_27_134054) do
+ActiveRecord::Schema.define(version: 2021_03_06_211041) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2021_02_27_134054) do
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "active", default: true, null: false
     t.integer "response_time", default: 500, null: false
+    t.string "slug", null: false
     t.index ["name", "user_id"], name: "index_pulsecheckers_on_name_and_user_id", unique: true
     t.index ["user_id"], name: "index_pulsecheckers_on_user_id"
   end

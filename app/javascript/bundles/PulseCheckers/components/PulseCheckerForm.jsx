@@ -92,7 +92,7 @@ PulseCheckerForm.defaultProps = { handleCancelEditPulseChecker: null };
 
 PulseCheckerForm.propTypes = {
   showCancelButton: PropTypes.bool.isRequired,
-  pulseChecker: PropTypes.arrayOf(PropTypes.object).isRequired,
+  pulseChecker: PropTypes.objectOf(PropTypes.any).isRequired,
   intervalValues: PropTypes.arrayOf(PropTypes.number).isRequired,
   responseTimeValues: PropTypes.arrayOf(PropTypes.number).isRequired,
   handleSavePulseChecker: PropTypes.func.isRequired,

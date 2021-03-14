@@ -30,6 +30,6 @@ const UpTimeChart = (props) => {
   );
 };
 
-UpTimeChart.propTypes = { data: PropTypes.shape([]).isRequired };
+UpTimeChart.propTypes = { data: PropTypes.arrayOf(PropTypes.object).isRequired };
 
 export default UpTimeChart;

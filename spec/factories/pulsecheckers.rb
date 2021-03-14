@@ -8,6 +8,7 @@
 #  kind          :integer          not null
 #  name          :string           default(""), not null
 #  response_time :integer          default(500), not null
+#  slug          :string           not null
 #  url           :string           default(""), not null
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null

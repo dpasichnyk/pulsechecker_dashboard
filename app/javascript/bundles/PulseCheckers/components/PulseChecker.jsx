@@ -8,7 +8,7 @@ import '../style/pulsechecker.css';
 
 const PulseChecker = (props) => {
   const { pulsechecker, handleRemove, handleChangeStatus, handleEdit } = props;
-  const { id, name, kind, interval, url, active, responseTime } = pulsechecker;
+  const { id, name, kind, interval, url, active, responseTime, slug } = pulsechecker;
 
   const mockedData = [
     { x: 'day 1', y: 33, val: 33 },
@@ -59,6 +59,11 @@ const PulseChecker = (props) => {
               <FontAwesomeIcon icon={active ? 'toggle-on' : 'toggle-off'} />
             </span>
           </button>
+          <a href={slug} target="_blank" rel="noreferrer" className="button is-info is-light">
+            <span className="icon is-small">
+              <FontAwesomeIcon icon="chart-bar" />
+            </span>
+          </a>
           <button className="button is-info is-light" type="button">
             <span className="icon is-small">
               <FontAwesomeIcon icon="eye" />
