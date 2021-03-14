@@ -30,6 +30,8 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  errors:
+    something_went_wrong: 'Something went wrong'
   controllers:
     plusechecker:
       create: 'PulseChecker was successfully created.'

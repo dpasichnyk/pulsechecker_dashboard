@@ -11,12 +11,18 @@ module ApplicationHelper
       'is-danger'
     when 'warning'
       'is-warning'
-    when 'alert'
-      'is-warning'
     when 'notice'
       'is-info'
     else
       flash_type.to_s
+    end
+  end
+
+  def camel_case_props(options)
+    if options.respond_to?(:each)
+      options.as_json.map{ |option| option.deep_transform_keys! { |key| key.to_s.camelize(:lower).to_sym }}
+    else
+      options.deep_transform_keys! { |key| key.to_s.camelize(:lower).to_sym }
     end
   end
 end

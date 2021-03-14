@@ -58,6 +58,21 @@
 
       <div class="field is-horizontal">
         <div class="field-label is-normal">
+          <label class="label">Response time</label>
+        </div>
+        <div class="field-body">
+          <div class="field is-narrow">
+            <div class="control">
+              <div class="select is-fullwidth">
+                <%= form.select :response_time, Pulsechecker::RESPONSE_TIME_VALUES.map { |m| [milliseconds_to_human_readable(m), m] } %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="field is-horizontal">
+        <div class="field-label is-normal">
           <label class="label">Interval</label>
         </div>
         <div class="field-body">

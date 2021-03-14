@@ -2,14 +2,16 @@
 #
 # Table name: pulsecheckers
 #
-#  id         :bigint           not null, primary key
-#  interval   :integer          not null
-#  kind       :integer          not null
-#  name       :string           default(""), not null
-#  url        :string           default(""), not null
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  user_id    :bigint           not null
+#  id            :bigint           not null, primary key
+#  active        :boolean          default(TRUE), not null
+#  interval      :integer          not null
+#  kind          :integer          not null
+#  name          :string           default(""), not null
+#  response_time :integer          default(500), not null
+#  url           :string           default(""), not null
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  user_id       :bigint           not null
 #
 # Indexes
 #

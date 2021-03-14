@@ -4,18 +4,18 @@
 // that code so it'll be compiled.
 
 // --- start JS ---
-import Rails from "@rails/ujs"
-import * as ActiveStorage from "@rails/activestorage"
-import "channels"
-import '@fortawesome/fontawesome-free/js/all.js';
-
-Rails.start()
-ActiveStorage.start()
+import Rails from '@rails/ujs';
+import * as ActiveStorage from '@rails/activestorage';
+import '../channels';
+import '@fortawesome/fontawesome-free/js/all';
 import './src/index';
-// --- end JS ---
-
-require.context('../images', true)
 
 // --- start stylesheets ---
-import '../stylesheets/application'
+import '../stylesheets/application.scss';
+
+Rails.start();
+ActiveStorage.start();
+// --- end JS ---
+
+require.context('../images', true);
 // --- end stylesheets ---
