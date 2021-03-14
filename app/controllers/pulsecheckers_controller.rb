@@ -1,12 +1,13 @@
 class PulsecheckersController < ApplicationController
   before_action :current_pulsechecker, only: %i[update destroy change_status]
-  
+
   def index
     @pulsecheckers = current_user.pulsecheckers
   end
 
   def create
-    @pulsechecker = current_user.pulsecheckers.create(pulsechecker_params)
+    @pulsechecker = current_user.pulsecheckers.new(pulsechecker_params)
+
     if @pulsechecker.save
       render json: @pulsechecker
     else

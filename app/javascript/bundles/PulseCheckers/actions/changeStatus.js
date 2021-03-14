@@ -1,9 +1,5 @@
-import axios from "axios";
+import requester from '../../lib/requester';
 
-const changeStatus = (id, token) => {
-  return axios.put(`/pulsecheckers/${id}/change_status`,{
-    authenticity_token: token
-  })
-};
+const changeStatus = (id, token) => requester.put(`/pulsecheckers/${id}/change_status`, { authenticityToken: token });
 
 export default changeStatus;

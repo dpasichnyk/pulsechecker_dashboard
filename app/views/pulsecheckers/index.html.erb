@@ -1,5 +1,5 @@
 <%= react_component('PulseCheckers', props: {
-  pulsecheckers: @pulsecheckers,
+  pulsecheckers: camel_case_props(@pulsecheckers),
   intervalValues: Pulsechecker::INTERVAL_VALUES,
   responseTimeValues: Pulsechecker::RESPONSE_TIME_VALUES,
   kindValues: Pulsechecker.kinds.keys

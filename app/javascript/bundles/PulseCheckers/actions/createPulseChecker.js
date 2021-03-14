@@ -1,10 +1,8 @@
-import axios from "axios";
+import requester from '../../lib/requester';
 
-const createPulseChecker = (token, pulseChecker) => {
-  return axios.post(`/pulsecheckers`,{
-    authenticity_token: token,
-    pulsechecker : pulseChecker
-  })
-};
+const createPulseChecker = (token, pulseChecker) => requester.post('/pulsecheckers', {
+  authenticityToken: token,
+  pulsechecker: pulseChecker,
+});
 
 export default createPulseChecker;
