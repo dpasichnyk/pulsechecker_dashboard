@@ -12,7 +12,12 @@ class ApplicationController < ActionController::Base
   end
 
   def render_not_found(error)
-    render_error error: error.message, data: { id: error.id, model: error.model, primary_key: error.primary_key }, status: 404
+    render_error error: error.message, data:
+      {
+        id: error.id,
+        model: error.model,
+        primary_key: error.primary_key
+      }, status: 404
   end
 
   def render_not_valid(error)
