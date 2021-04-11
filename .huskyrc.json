@@ -1,6 +1,5 @@
 {
   "hooks": {
-    "pre-commit": ["yarn lint"],
-    "pre-commit": ["bundle exec rubocop"]
+    "pre-commit": "yarn run lint & bundle exec rubocop"
   }
 }

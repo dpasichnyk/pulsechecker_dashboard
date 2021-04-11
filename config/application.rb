@@ -8,6 +8,9 @@ Bundler.require(*Rails.groups)
 
 module PulsecheckerDashboard
   class Application < Rails::Application
+    Dir['../lib/app_mode/*.rb'].each { |file| require_relative file }
+    require_relative '../lib/app_mode'
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
 
@@ -19,6 +22,8 @@ module PulsecheckerDashboard
     # in config/environments, which are processed later.
     #
     # config.time_zone = "Central Time (US & Canada)"
-    # config.eager_load_paths << Rails.root.join("extras")
+    config.eager_load_paths << Rails.root.join('lib')
+    # Autoload lib directory
+    config.autoload_paths << Rails.root.join('lib')
   end
 end

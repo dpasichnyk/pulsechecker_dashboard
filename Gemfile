@@ -30,7 +30,8 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'foreman'
-  gem 'rspec-rails', '~> 4.0.2'
+  gem 'rspec-rails', '~> 3.9.1'
+  gem 'shoulda-matchers', '~> 4.5.1'            # See `rails_support/shoulda_matchers.rb`.
 end
 
 group :development do
@@ -39,7 +40,6 @@ group :development do
   gem 'mailcatcher'
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'rubocop', require: false
-  gem 'spring'
   gem 'web-console', '>= 4.1.0'
 end
 

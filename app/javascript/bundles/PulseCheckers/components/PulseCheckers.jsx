@@ -20,11 +20,12 @@ class PulseCheckers extends Component {
 
   constructor(props) {
     super(props);
+
     const { pulsecheckers } = this.props;
 
     this.state = {
-      authenticityToken: document.querySelector('meta[name=csrf-token]').content,
       pulsecheckers,
+      authenticityToken: document.querySelector('meta[name=csrf-token]').content,
       newPulseChecker: PulseCheckers.initPulseChecker(),
     };
   }
@@ -35,6 +36,7 @@ class PulseCheckers extends Component {
 
       if (response.status === 204) {
         const newArray = pulsecheckers.filter(obj => obj.id !== id);
+
         this.setState({ pulsecheckers: newArray });
       } else {
         console.log(response);
@@ -63,11 +65,15 @@ class PulseCheckers extends Component {
       if (id) {
         const elementsIndex = pulsecheckers.findIndex(el => el.id === id);
         const newArray = [...pulsecheckers];
+
         newArray[elementsIndex] = { ...newArray[elementsIndex], [event.target.name]: event.target.value };
+
         this.setState({ pulsecheckers: newArray });
       } else {
         const newPulseChecker = { ...pulsechecker };
+
         newPulseChecker[event.target.name] = event.target.value;
+
         this.setState({ newPulseChecker });
       }
     }
@@ -77,16 +83,19 @@ class PulseCheckers extends Component {
 
       const elementsIndex = pulsecheckers.findIndex(el => el.id === id);
       const newArray = [...pulsecheckers];
+
       newArray[elementsIndex] = { ...newArray[elementsIndex], isEdit: true };
+
       this.setState({ pulsecheckers: newArray });
     }
 
     handleCancelEditPulseChecker = (id) => {
       const { pulsecheckers } = this.state;
-
       const elementsIndex = pulsecheckers.findIndex(el => el.id === id);
       const newArray = [...pulsecheckers];
+
       newArray[elementsIndex] = { ...newArray[elementsIndex], isEdit: false };
+
       this.setState({ pulsecheckers: newArray });
     }
 
@@ -105,10 +114,7 @@ class PulseCheckers extends Component {
       if (response.status === 200) {
         const newArray = [...pulsecheckers, response.data];
 
-        this.setState({
-          pulsecheckers: newArray,
-          newPulseChecker: PulseCheckers.initPulseChecker(),
-        });
+        this.setState({ pulsecheckers: newArray, newPulseChecker: PulseCheckers.initPulseChecker() });
       } else {
         console.log(response);
       }
@@ -122,7 +128,9 @@ class PulseCheckers extends Component {
       if (response.status === 200) {
         const elementsIndex = pulsecheckers.findIndex(el => el.id === id);
         const newArray = [...pulsecheckers];
+
         newArray[elementsIndex] = response.data;
+
         this.setState({ pulsecheckers: newArray });
       } else {
         console.log(response);
@@ -167,9 +175,7 @@ class PulseCheckers extends Component {
         <div className="pulsecheckers">
           <table className="table is-striped is-narrow is-hoverable is-fullwidth">
             <tbody>
-              {pulsecheckers.map(pulsechecker => (
-                pulsechecker.isEdit ? this.renderEditForm(pulsechecker) : this.renderPulseCheckerRow(pulsechecker)
-              ))}
+              { pulsecheckers.map(pulsechecker => (pulsechecker.isEdit ? this.renderEditForm(pulsechecker) : this.renderPulseCheckerRow(pulsechecker))) }
               <PulseCheckerForm
                 showCancelButton={false}
                 pulseChecker={newPulseChecker}

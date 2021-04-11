@@ -17,12 +17,23 @@ AllCops:
     - config.ru
     - Rakefile
     - config/spring.rb
+    - lib/app_mode/*
+    - lib/app_mode.rb
+    - spec/support/spec/*
+    - spec/lib/**/*
+    - spec/spec_helper.rb
+    - spec/support/rails/factory_bot_rails.rb
+    - spec/app/models/_rails_helper.rb
+    - spec/app/services/_rails_helper.rb
+    - lib/service_input.rb
+    - lib/feature/attr_magic.rb
+    - lib/feature/default_for.rb
 
 Layout/TrailingWhitespace:
   Enabled: false
 
 Layout/LineLength:
-  Max: 100
+  Max: 170
   Exclude:
     - db/**/*
 Metrics/ClassLength:
@@ -44,7 +55,11 @@ Metrics/AbcSize:
   Max: 30
   Exclude:
     - db/**/*
-
+    - spec/app/services/schedule_pulsechecker_service_spec.rb
+Naming/VariableNumber:
+  Enabled: true
+  Exclude:
+    - spec/app/services/*
 Naming/PredicateName:
   Enabled: false
 Style/ClassAndModuleChildren:
@@ -81,6 +96,11 @@ Style/RedundantArgument:
   Enabled: true
 Style/SwapValues:
   Enabled: true
+Layout/ElseAlignment:
+  Enabled: true
+  Exclude:
+    - lib/feature/attr_magic.rb
+    - lib/service_input.rb
 Layout/SpaceBeforeBrackets:
   Enabled: true
 Lint/AmbiguousAssignment:
@@ -103,6 +123,16 @@ Lint/SymbolConversion:
   Enabled: true
 Lint/TripleQuotes:
   Enabled: true
+Lint/UnderscorePrefixedVariableName:
+  Enabled: true
+  Exclude:
+    - app/services/application_service.rb
+Style/Alias:
+  Enabled: true
+  Exclude:
+    - app/services/*
+Style/CommentedKeyword:
+  Enabled: false
 Style/EndlessMethod:
   Enabled: true
 Style/IfWithBooleanLiteralBranches:

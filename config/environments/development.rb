@@ -13,6 +13,7 @@ Rails.application.configure do
 
   # Show full error reports.
   config.consider_all_requests_local = true
+  # config.public_file_server.enabled = AppMode.rails_serve_static_files?
 
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.

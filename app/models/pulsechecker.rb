@@ -28,8 +28,18 @@ class Pulsechecker < ApplicationRecord
 
   # constants
   INTERVAL_VALUES = [
-    10_000, 20_000, 30_000, 40_000, 50_000, 60_000,
-    120_000, 180_000, 360_000, 720_000, 1_800_000, 3_600_000
+    10_000,
+    20_000,
+    30_000,
+    40_000,
+    50_000,
+    60_000,
+    120_000,
+    180_000,
+    360_000,
+    720_000,
+    1_800_000,
+    3_600_000
   ].freeze
 
   RESPONSE_TIME_VALUES = [125, 250, 500, 1000, 2000].freeze
@@ -50,6 +60,7 @@ class Pulsechecker < ApplicationRecord
   def generate_slug
     self.slug = loop do
       slug = SecureRandom.urlsafe_base64(4)
+
       break slug unless Pulsechecker.exists?(slug: slug)
     end
   end
